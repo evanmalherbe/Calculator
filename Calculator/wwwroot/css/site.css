@@ -18,3 +18,4 @@ body { margin-bottom: 60px; }
 	.calculator-buttonEquals:hover { background-color: #e58700; }
 	.calculator-buttonEquals:active { background-color: #cc7800; }
 .confine { height: 25%; width: 100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.calculator-button { -webkit-user-select: none; /* For Chrome, Safari, etc. */ user-select: none; }

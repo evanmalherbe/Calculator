@@ -4,6 +4,17 @@ let valueObject = { "value1": undefined, "value2": undefined, "operator": undefi
 let $displayArea = $("#displayArea");
 let $userMessage = $("#message");
 
+$('.calculator-button').on('click', function (event)
+{
+	// Stop the browser from executing its default action (like 'Touch to Search')
+	// This is the key fix for the mobile issue!
+	event.preventDefault();
+
+	// Optional: Stop the event from bubbling up the DOM tree,
+	// which can also help prevent unintended interactions.
+	event.stopPropagation();
+});
+
 // listen for user keyboard key presses
 $(document).on('keydown', function (event)
 {
