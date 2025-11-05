@@ -1,6 +1,6 @@
 # Simple Calculator App
 This little calculator app is built using .NET Core 8 with an MVC (Mode-View-Controller) architecture. I've used a fair amount of Javascript for the functionality and calculations as well.<br/> 
-
+[![Live Demo Link](https://img.shields.io/badge/Live%20Demo%20Link-3178c6)](https://calculator-production-babf.up.railway.app/)<br/>
 ### Technologies
 ![.NET 8](https://img.shields.io/badge/.NET%208-000)
 ![Javascript](https://img.shields.io/badge/Javascript-06b6d4)
