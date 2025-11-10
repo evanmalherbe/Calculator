@@ -40,7 +40,7 @@ function calculateAnswer(operator)
 	let value1 = Number(valueObject.value1);
 	let value2 = Number(valueObject.value2);
 	let isInvalid = false;
-	if (operator === ".")
+	if (operator === "." && !valueObject.hasPeriodValue2)
 	{
 		//valueObject.value2 += operator;
 		valueObject.hasPeriodValue2 = true;
@@ -92,6 +92,7 @@ function calculateAnswer(operator)
 			valueObject.answer = parseFloat((value1 / value2).toFixed(4)).toString();
 		}
 	}
+
 	if (!isInvalid)
 	{
 		// if is a valid calculation
@@ -101,7 +102,7 @@ function calculateAnswer(operator)
 		valueObject.operator = undefined;
 		valueObject.hasPeriodValue1 = valueObject.value1.includes(".");
 		$displayArea.empty().append(valueObject.answer);
-		if (operator != "=")
+		if (operator != "=" && operator != ".")
 		{
 			valueObject.operator = operator;
 			$displayArea.append(operator);
@@ -370,14 +371,17 @@ function processOperatorKeys(value)
 
 			if (actualValue === ".")
 			{
-				valueObject.hasPeriodValue1 = true;
-				if (valueObject.value1 === undefined)
+				if (!valueObject.hasPeriodValue1)
 				{
-					$displayArea.empty().append("0.");
-				}
-				else
-				{
-					$displayArea.append(".");
+					valueObject.hasPeriodValue1 = true;
+					if (valueObject.value1 === undefined)
+					{
+						$displayArea.empty().append("0.");
+					}
+					else
+					{
+						$displayArea.append(".");
+					}
 				}
 			}
 		}
@@ -385,14 +389,18 @@ function processOperatorKeys(value)
 		{
 			if (actualValue === ".")
 			{
-				valueObject.hasPeriod = true;
 				if (valueObject.value2 === undefined)
 				{
 					$displayArea.append("0.");
+					valueObject.hasPeriodValue2 = true;
 				}
 				else
 				{
-					$displayArea.append(".");
+					if (!valueObject.hasPeriodValue2)
+					{
+						$displayArea.append(".");
+						valueObject.hasPeriodValue2 = true;
+					}
 				}
 			}
 		}
@@ -466,19 +474,16 @@ function addNumberToVariable(buttonValue)
 function assignValue(whichObjectValue, buttonValue)
 {
 	valueObject[whichObjectValue] = "0" + "." + buttonValue;
-	//valueObject.hasPeriod = false;
 }
 function calculation(valueString, hasPeriod, buttonValue, whichObjectValue)
 {
 	if (hasPeriod && !valueString.includes("."))
 	{
 		valueObject[whichObjectValue] = valueString + "." + buttonValue;
-		//valueObject.hasPeriod = false;
 	}
 	else if (hasPeriod && valueString.includes("."))
 	{
 		valueObject[whichObjectValue] = valueString + buttonValue;
-		valueObject.hasPeriod = false;
 	}
 	else
 	{
