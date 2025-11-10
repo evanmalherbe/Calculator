@@ -8,3 +8,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.0.0] - 2025-11-10
 ### Fixed
 - Bug where user could add second decimal point to number
+- Bug: User could type second number like "0234"
