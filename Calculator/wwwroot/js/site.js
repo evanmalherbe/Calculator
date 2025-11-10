@@ -387,6 +387,7 @@ function processOperatorKeys(value)
 		}
 		else
 		{
+			// Operator value is not undefined, so value 1 exists
 			if (actualValue === ".")
 			{
 				if (valueObject.value2 === undefined)
@@ -396,6 +397,7 @@ function processOperatorKeys(value)
 				}
 				else
 				{
+					// value 2 is not undefined
 					if (!valueObject.hasPeriodValue2)
 					{
 						$displayArea.append(".");
@@ -487,6 +489,23 @@ function calculation(valueString, hasPeriod, buttonValue, whichObjectValue)
 	}
 	else
 	{
-		valueObject[whichObjectValue] = valueString + buttonValue;
+		if (valueString === "0" && buttonValue !== "0")
+		{
+			// replace zero with new number value
+			valueObject[whichObjectValue] = buttonValue;
+			let currentDisplayArray = $displayArea.text().split("");
+			currentDisplayArray.pop();
+			$displayArea.empty().append(currentDisplayArray.join(""));
+		}
+		else if (valueString === "0" && buttonValue === "0")
+		{
+			let currentDisplayArray = $displayArea.text().split("");
+			currentDisplayArray.pop();
+			$displayArea.empty().append(currentDisplayArray.join(""));
+		}
+		else
+		{
+			valueObject[whichObjectValue] = valueString + buttonValue;
+		}
 	}
 }
