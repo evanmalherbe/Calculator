@@ -1,6 +1,6 @@
 # Simple Calculator App
 This little calculator app is built using .NET Core 8 with an MVC (Mode-View-Controller) architecture. I've used a fair amount of Javascript for the functionality and calculations as well.<br/> 
-[![Live Demo Link](https://img.shields.io/badge/Live%20Demo%20Link-3178c6)](https://calculator-production-babf.up.railway.app/)<br/><br/>
+[![Live Demo Link](https://img.shields.io/badge/Live%20Demo%20Link-3178c6)](http://simple-calculator.runasp.net)<br/><br/>
 ### Technologies
 ![.NET 8](https://img.shields.io/badge/.NET%208-000)
 ![Javascript](https://img.shields.io/badge/Javascript-06b6d4)
@@ -18,7 +18,7 @@ This little calculator app is built using .NET Core 8 with an MVC (Mode-View-Con
 
 ## Description
 This mobile responsive app calculator allows you to perform all the usual calculations and includes user error/warning messages for invalid operations such as dividing by zero (see screenshot below). I've used a lot of Javascript for the functionality of the buttons and the calculations to ensure everything is nice and responsive. It handles decimal calculations and I've done fairly thorough testing, although I will be revisiting the code every now and again to add functionality or fix bugs that I find.<br/>
-![Calculator with error message](https://imagestore-production.up.railway.app/images/calculator/calculator-error.png)
+![Calculator with error message](https://image-store.premiumasp.net/images/calculator/calculator-error.png)
 
 ## Getting Started
 This project is a .NET Core MVC web application. To run it outside of Visual Studio, you'll need the **.NET Core SDK** installed on your machine (the version that is compatible with this project - 8.0). 
@@ -34,7 +34,7 @@ This project is a .NET Core MVC web application. To run it outside of Visual Stu
 
 ## Usage
 Once you open the project in your browser `http://localhost:5000` (or similar), you will see the calculator with it's familiar layout of buttons. Simply use the number keypad on your keyboard or use your mouse to click the buttons on screen. See figure 1 below.<br/>
-![Calculator screenshot 2](https://imagestore-production.up.railway.app/images/calculator/calculator.png)
+![Calculator screenshot 2](https://image-store.premiumasp.net/images/calculator/calculator.png)
 
 ## Contributing
 Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
